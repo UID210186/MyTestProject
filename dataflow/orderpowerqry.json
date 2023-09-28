@@ -1,0 +1,20 @@
+{
+	"name": "orderpowerqry",
+	"properties": {
+		"type": "WranglingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"name": "Excel1",
+					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~>  Excel1",
+					"dataset": {
+						"referenceName": "OrderDetails",
+						"type": "DatasetReference"
+					}
+				}
+			],
+			"script": "section Section1;\r\nshared Excel1 = let AdfDoc = AzureStorage.BlobContents(\"https://divstorageacc.blob.core.windows.net/newcontainer/Order_item_details.xlsx\"), Excel = Excel.Workbook(AdfDoc),ExcelSheet = Excel{[Item=\"Sheet1\",Kind=\"Sheet\"]}[Data], PromotedHeaders = Table.PromoteHeaders(ExcelSheet, [PromoteAllScalars = true]) in PromotedHeaders;\r\nshared UserQuery = let Source = #\"Excel1\" in Source;\r\n",
+			"documentLocale": "en-us"
+		}
+	}
+}
