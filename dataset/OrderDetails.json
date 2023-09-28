@@ -1,0 +1,74 @@
+{
+	"name": "OrderDetails",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Order_item_details.xlsx",
+				"container": "newcontainer"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "OrderDatetime",
+				"type": "String"
+			},
+			{
+				"name": "order_id",
+				"type": "String"
+			},
+			{
+				"name": "ItemName",
+				"type": "String"
+			},
+			{
+				"name": "item_no",
+				"type": "String"
+			},
+			{
+				"name": "item_qty",
+				"type": "String"
+			},
+			{
+				"name": "Substitution_Flag",
+				"type": "String"
+			},
+			{
+				"name": "Actual_Item_Inventory",
+				"type": "String"
+			},
+			{
+				"name": "status",
+				"type": "String"
+			},
+			{
+				"name": "location",
+				"type": "String"
+			},
+			{
+				"name": "next_process",
+				"type": "String"
+			},
+			{
+				"name": "is_cancelled",
+				"type": "String"
+			},
+			{
+				"name": "start_time",
+				"type": "String"
+			},
+			{
+				"name": "end_time",
+				"type": "String"
+			}
+		]
+	}
+}
