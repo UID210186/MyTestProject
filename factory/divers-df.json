@@ -1,0 +1,9 @@
+{
+	"name": "divers-df",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "fd6c2cff-46fa-431a-986b-1c1c3847263e",
+		"tenantId": "a4431f4b-c207-4733-9530-34c08a9b2b8d"
+	}
+}
